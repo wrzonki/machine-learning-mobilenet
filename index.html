@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rozpoznawanie zdjęć</title>
+    <script src="https://unpkg.com/ml5@0.1.3/dist/ml5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">
+                                Dodaj zdjęcie
+                            </label>
+                            <div class="preview-zone hidden">
+                                <div class="box box-solid">
+                                    <div class="box-header with-border">
+                                        <div>
+                                            <b>Podgląd</b>
+                                        </div>
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-danger btn-xs remove-preview">
+                                                <i class="fa fa-times"></i>
+                                                Zresetuj
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body"></div>
+                                </div>
+                            </div>
+                            <p>Myślę, że to może być: <span id="result">...</span></p>
+                            <p>z prawdopodobieństwem: <span id="probability">...</span></p>
+                        
+                            <br /><br /><br />
+                        
+                            <p>* MobileNet jest wytrenowany z labelkami w języku angielskim</p>
+                            <div class="dropzone-wrapper">
+                                <div class="dropzone-desc">
+                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                    <p>Wybierz fotę</p>
+                                </div>
+                                <input type="file" name="img_logo" class="dropzone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right">
+                            Dodaj
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+
+
+    <script src="prediction.js"></script>
+    <script src="dragAndDrop.js"></script>
+
+</body>
+
+</html>
